@@ -1,8 +1,13 @@
 import * as React from 'react'
 import Badge from 'react-bootstrap/Badge'
 
+import Header from '../components/header'
+
 const Home = () => (
-  <Badge variant="secondary">New</Badge>
+  <>
+    <Header />
+    <Badge variant="secondary">New</Badge>
+  </>
 )
 
 export default Home
