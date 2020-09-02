@@ -2,9 +2,11 @@ import React from 'react';
 import { ActionData } from '../../data'
 import ActionItems from './ActionItems';
 
+interface State {
+    actions?: string | number
+}
 
-
-class Action extends React.Component {
+class Action extends React.Component<State> {
     state = {
         actions: ActionData
     }

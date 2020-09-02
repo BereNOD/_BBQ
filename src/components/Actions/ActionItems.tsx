@@ -2,7 +2,12 @@ import React from 'react';
 import Button from '../Buttons/index';
 import './styles.css'
 
-class ActionItems extends React.Component {
+interface Props {
+    period: string
+    price: number
+}
+
+class ActionItems extends React.Component<Props> {
     render = () => (
         <div className="Action__box">
             <div className="ActionItem">

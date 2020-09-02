@@ -1,7 +1,11 @@
 import * as React from 'react'
 import './styles.css'
 
-const Info = ({ children }) => (
+interface Props {
+    children: string
+}
+
+const Info = ({ children }: Props) => (
     <div className="Info">
         <span>{children}</span>
     </div>

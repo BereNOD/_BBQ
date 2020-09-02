@@ -5,7 +5,7 @@ interface Props {
     children: string
 }
 
-const Button = ({ children, outline }: Props) => (
+const Button = ({ children }: Props) => (
     <button
         className="Button--blue"
         type="button"

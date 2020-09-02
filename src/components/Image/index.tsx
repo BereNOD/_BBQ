@@ -1,10 +1,16 @@
 import * as React from 'react'
 
 import './styles.css'
-
 import photo1 from '../../assets/image/photo1.png'
 
-class Image extends React.Component {
+interface State {
+    src?: string
+    alt: string
+    width: number
+    height: number
+}
+
+class Image extends React.Component<State> {
     state = {
         image: {
             src: photo1,

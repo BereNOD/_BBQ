@@ -6,12 +6,13 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-import Image from '../Image/index.jsx'
-import Title from '../Title'
-import Info from '../Info/index.jsx'
-import Action from '../Actions/index.jsx'
+import Image from '../Image/index'
+import Title from '../Title/index'
+import Info from '../Info/index'
+import Action from '../Actions/index'
 
 import { InformationData } from '../../data'
+
 
 class BusinessMenu extends React.Component {
     state = {
@@ -23,9 +24,8 @@ class BusinessMenu extends React.Component {
                 <Col xs={12}>
                     <article className="BusinessMenu">
                         <Image />
-                        {/* <InfoBlock /> */}
                         <div className="Description__box">
-                            <Title className="Title">Бизнес меню</Title>
+                            <Title>Бизнес меню</Title>
                             <Info>
                                 <p>
                                     У нас можно заказать бизнес-ланч с доставкой в ​​офис. Для этого заранее свяжитесь с нами, чтобы мы успели позаботиться о вашем обеде.
