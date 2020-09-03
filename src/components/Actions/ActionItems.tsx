@@ -8,17 +8,17 @@ interface Props {
 }
 
 class ActionItems extends React.Component<Props> {
-    render = () => (
-        <div className="Action__box">
-            <div className="ActionItem">
-                <div className="Text__box">
-                    <span className="Text__period">{this.props.period}</span>
-                    <span className="Text__price">{this.props.price} грн.</span>
-                </div>
-                <Button>Заказать</Button>
-            </div>
-        </div>
-    )
+    render = () => null
+    // <div className="Action__box">
+    //     <div className="ActionItem">
+    //         <div className="Text__box">
+    //             <span className="Text__period">{this.props.period}</span>
+    //             <span className="Text__price">{this.props.price} грн.</span>
+    //         </div>
+    //         <Button>Заказать</Button>
+    //     </div>
+    // </div>
+
 }
 
 export default ActionItems
