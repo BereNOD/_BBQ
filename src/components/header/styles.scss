@@ -1,0 +1,30 @@
+.Header {
+  padding: 0 25px;
+  height: 156px;
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  &__inner {
+    margin: auto;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-radius: 10px;
+    background-color: #FFFFFF;
+  }
+
+  &__logoWrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__openTime {
+    margin-left: auto;
+  }
+}
