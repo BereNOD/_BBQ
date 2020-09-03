@@ -3,7 +3,7 @@ import * as React from 'react'
 import BBQLogo from '../../assets/images/BBQLogo.png'
 
 import Link from '../link'
-import Image from '../image'
+import Image from '../Image'
 
 import './styles.scss'
 

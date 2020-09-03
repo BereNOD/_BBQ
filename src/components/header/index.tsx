@@ -10,7 +10,7 @@ import HeaderBackground from '../../assets/images/headerBackground.jpg'
 
 import Link from '../link'
 import Text from '../text'
-import Image from '../image'
+import Image from '../Image'
 import Logo from '../logo'
 
 import './styles.scss'

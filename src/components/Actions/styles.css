@@ -1,0 +1,38 @@
+.Action__box {
+    box-sizing: border-box;
+	display: inline-block;
+	margin-top: -1px;
+	border: 1px dashed #D8D8D8;
+	vertical-align: top;
+}
+
+.ActionItem {
+    display: flex;
+    justify-content: space-between;
+    width: 290px;
+    padding: 25px;
+
+}
+
+.Text__box {
+    display: flex;
+    flex-direction: column;
+}
+
+.Text__period {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #474747;
+    margin-bottom: 4px;
+}
+
+.Text__price {
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #474747;
+}
+
