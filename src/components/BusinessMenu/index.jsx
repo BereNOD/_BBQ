@@ -6,13 +6,14 @@ import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-import Image from '../Image/index'
-import Title from '../Title/index'
-import Info from '../Info/index'
-import Action from '../Actions/index'
+import Image from '../Image'
+import Title from '../Title'
+import Info from '../Info'
+import Action from '../Actions'
 
 import { InformationData } from '../../data'
 
+import photo1 from '../../assets/image/photo1.png'
 
 class BusinessMenu extends React.Component {
     state = {
@@ -23,7 +24,12 @@ class BusinessMenu extends React.Component {
             <Row>
                 <Col xs={12}>
                     <article className="BusinessMenu">
-                        <Image />
+                        <Image
+                          src={photo1}
+                          alt={'Dish photo'}
+                          width={268}
+                          height={268}
+                        />
                         <div className="Description__box">
                             <Title>Бизнес меню</Title>
                             <Info>

@@ -9,6 +9,12 @@
     padding: 50px;
 }
 
+.BusinessMenu .Image {
+    border-radius: 10px;
+    width: 268px;
+    height: 268px;
+}
+
 .Description__box {
     height: 268px;
     display: flex;

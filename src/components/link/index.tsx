@@ -1,18 +1,21 @@
 import * as React from 'react'
 
+import './styles.scss'
+
 interface Props {
-  src: string
-  alt: string
-  width: number
-  height: number
+  href: string
   classes?: string | string[]
+  children: React.ReactNode
 }
 
-class Image extends React.Component<Props> {
+class Link extends React.Component<Props> {
+  static defaultProps = {
+    href: '#'
+  }
 
   render = () => {
-    let classes = 'Image'
-
+    let classes = 'Link'
+    
     if (this.props.classes) {
       if (typeof this.props.classes === 'string') {
         classes = `${classes} ${this.props.classes}`
@@ -24,16 +27,14 @@ class Image extends React.Component<Props> {
     }
 
     return (
-      <img
-        {...this.props}
-        src={this.props.src}
-        alt={this.props.alt}
-        width={this.props.width}
-        height={this.props.height}
+      <a
         className={classes}
-      />
+        href={this.props.href}
+      >
+        {this.props.children}
+      </a>
     )
   }
 }
 
-export default Image
+export default Link

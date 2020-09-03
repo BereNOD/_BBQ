@@ -1,17 +1,15 @@
 import * as React from 'react'
 
+import './styles.scss'
+
 interface Props {
-  src: string
-  alt: string
-  width: number
-  height: number
+  children: React.ReactNode
   classes?: string | string[]
 }
 
-class Image extends React.Component<Props> {
-
+class Text extends React.Component<Props> {
   render = () => {
-    let classes = 'Image'
+    let classes = 'Text'
 
     if (this.props.classes) {
       if (typeof this.props.classes === 'string') {
@@ -24,16 +22,11 @@ class Image extends React.Component<Props> {
     }
 
     return (
-      <img
-        {...this.props}
-        src={this.props.src}
-        alt={this.props.alt}
-        width={this.props.width}
-        height={this.props.height}
-        className={classes}
-      />
+      <span {...this.props} className={classes}>
+        {this.props.children}
+      </span>
     )
   }
 }
 
-export default Image
+export default Text
