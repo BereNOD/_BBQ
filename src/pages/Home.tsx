@@ -1,6 +1,6 @@
 import * as React from 'react'
 import Header from '../components/header'
-import BusinessMenu from '../components/BusinessMenu/index'
+import BusinessMenu from '../components/BusinessMenu'
 
 const Home = () => (
   <>
