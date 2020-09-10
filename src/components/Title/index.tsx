@@ -2,14 +2,31 @@ import * as React from 'react'
 import './styles.css'
 
 interface Props {
-    children: string
+    children: React.ReactNode
+    classes?: string | string[]
 }
 
-const Title = ({ children }: Props) => (
-    <div className="Title">
-        <span>{children}</span>
-    </div>
-)
+class Title extends React.Component<Props> {
+    render = () => {
+        let classes = 'Text'
+
+        if (this.props.classes) {
+            if (typeof this.props.classes === 'string') {
+                classes = `${classes} ${this.props.classes}`
+            }
+            if (Array.isArray(this.props.classes)) {
+                classes = `${classes} ${this.props.classes.join(' ')}`
+            }
+        }
+
+        return (
+            <span className={classes}>
+                {this.props.children}
+            </span>
+        )
+    }
+}
+
 
 
 export default Title
