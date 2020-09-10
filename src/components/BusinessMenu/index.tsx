@@ -1,11 +1,14 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
+import { Dispatch } from 'redux';
 
 import './styles.css'
 
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+
+import { IStore } from '../../reducers/types'
 
 import Image from '../Image'
 import Title from '../Title'
@@ -14,23 +17,26 @@ import Action from '../MenuActions'
 
 import businessMenuPreview from '../../assets/images/bisness-menu-preview.png'
 
-type Props = {
-
+type StateProps = {
+  bisnessMenu: any
 }
+type DispatchProps = {
+  fetchBisnessMenu: (payload: IStore['menu']['bisness']) => void
+}
+type Props = {}
 type State = {}
 
 
-class BusinessMenu extends React.Component<Props, State> {
+class BusinessMenu extends React.Component<Props & StateProps & DispatchProps, State> {
     componentDidMount() {
         fetch('/bisness-menu')
             .then(response => response.json())
             .then(data => {
-                // @ts-ignore
                 this.props.fetchBisnessMenu(data)
             })
     }
     render = () => {
-        console.log('BusinessMenu props:', this.props);
+      console.log('BusinessMenu bisnessMenu:', this.props.bisnessMenu);
 
         return (
             <Container>
@@ -67,18 +73,15 @@ class BusinessMenu extends React.Component<Props, State> {
     }
 }
 
-// @ts-ignore
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: IStore): StateProps => ({
     bisnessMenu: state.menu.bisness
 })
 
-// @ts-ignore
-const mapDispatchToProps = (dispatch) => ({
-    // @ts-ignore
-    fetchBisnessMenu: (payload) => dispatch({
-        type: 'FETCH_BISNESS_MENU',
-        payload: payload
-    })
+const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
+  fetchBisnessMenu: (payload: IStore['menu']['bisness']) => dispatch({
+    type: 'FETCH_BISNESS_MENU',
+    payload: payload
+  })
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BusinessMenu)
