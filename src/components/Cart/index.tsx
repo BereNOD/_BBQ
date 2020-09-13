@@ -115,7 +115,7 @@ class Cart extends React.Component<Props> {
                     height={31}
                 />
                 <Text classes="Promo__text">Доступно 2568 бонусных баллов</Text>
-                <Button>Использовать</Button>
+                <Button classes="Button--blue PromoBonusButton__text">Использовать</Button>
             </div>
             <div className="Order__Prices">
                 <div className="Order__price">
@@ -136,7 +136,7 @@ class Cart extends React.Component<Props> {
                 </div>
             </div>
             <div className="OrderButton__wrapper">
-                <Button>Оформить заказ</Button>
+                <Button classes="Button--blue OrderButton__text">Оформить заказ</Button>
             </div>
 
         </div>
