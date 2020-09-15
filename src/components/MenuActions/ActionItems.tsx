@@ -1,13 +1,25 @@
 import React from 'react';
-import Button from '../Buttons/index';
+import { connect } from 'react-redux'
+import { Dispatch } from 'redux';
+import { ICartItem } from '../../reducers/cartTypes';
+
+// import Button from '../Buttons/index';
 import './styles.css'
+
+type DispatchProps = {
+    addToCart: (item: ICartItem) => void
+}
 
 interface Props {
     period: string
     price: number
+    id: number
 }
 
-class ActionItems extends React.Component<Props> {
+class ActionItems extends React.Component<Props & DispatchProps> {
+    handleClick = (): void => {
+        this.props.addToCart({ id: this.props.id })
+    }
     render = () => (
         <div className="Action__box">
             <div className="ActionItem">
@@ -15,11 +27,21 @@ class ActionItems extends React.Component<Props> {
                     <span className="Text__period">{this.props.period}</span>
                     <span className="Text__price">{this.props.price} грн.</span>
                 </div>
-                <Button>Заказать</Button>
+                <button onClick={this.handleClick}>Заказать</button>
             </div>
         </div>
     )
 
 }
 
-export default ActionItems
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+    addToCart: (item: ICartItem): void => {
+        dispatch({
+            type: 'ADD_TO_CART',
+            payload: item
+        })
+    }
+})
+
+export default connect(null, mapDispatchToProps)(ActionItems)

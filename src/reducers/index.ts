@@ -1,7 +1,10 @@
 import menu from './menu'
+import cart from './cart'
+
 
 const reducers = {
-  menu
+  menu, cart
+
 }
 
 export default reducers
