@@ -1,0 +1,26 @@
+.NameInput {
+    border: 1px solid #D8D8D8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 215px;
+    height: 35px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+.NameInput__title {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #474747;
+    margin-bottom: 7px;
+}
+
+input::placeholder{
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    color: #D8D8D8;
+}
+

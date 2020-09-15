@@ -1,0 +1,238 @@
+.Cart {
+    width: 550px;
+    height: 1010px;
+    padding: 44px 50px 38px 50px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.Cart__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.Cart__title {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #474747;
+}
+
+.Cart__quantity {
+    display: flex;
+    justify-content: right;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: right;
+    color: #D8D8D8;
+
+}
+
+.Cart__Items {
+    margin: 31px 0 20px 0;
+}
+
+.Cart__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px 0 11px 0;
+    border-bottom: 1px dashed #D8D8D8;
+}
+
+.Cart__itemInfo {
+    width: 200px;
+}
+
+.Cart__itemInfo--description {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #474747;
+}
+
+.Cart__itemPrice {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: #474747;
+}
+
+.Cart__orderDetails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.PromoBonus__wrapper {
+    width: 100%;
+    height: 54px;
+    background-color:rgba(16, 180, 164, 0.1);
+    border-top: 1px dashed #D8D8D8;
+    border-bottom: 1px dashed #D8D8D8;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* padding-top: 10px;
+    padding-bottom: 15px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.Promo__text {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #0A6A60;
+}
+
+.deliveryTime__title {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #474747;
+}
+
+.deliveryTime__choice {
+    display: flex;
+    justify-content: space-between;
+} 
+
+.deliveryTime__shortly {
+    display: flex;
+    align-items: center;
+}
+
+.deliveryTime__shorlyText {
+    margin: 0;
+    margin-left: 7px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    color: #474747;
+}
+
+.deliveryTime__exactText {
+    margin: 0;
+    margin-left: 7px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    color: #D9D9D9;
+}
+
+.deliveryTime__exact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.Order__Prices {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-bottom: 1px dashed #D8D8D8;;
+}
+
+.Order__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 21px;
+    margin-bottom: 15px;
+}
+
+.Order__priceText {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #7E7E7E;
+}
+
+.Order__delivery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.Order__deliveryText {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #7E7E7E;
+}
+
+.Order__bonus {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.Order__bonusText {
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: right;
+    color: #00B4A4;
+}
+
+.Order__sum {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.Order__sumText {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 22px;
+    color: #474747;
+}
+
+.OrderButton__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+
+
+.Button--blue {
+    background: #10B4A4;
+    box-shadow: 0px 3px 0px #0A6A60;
+}
+
+.OrderButton__text {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.PromoBonusButton__text {
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+}

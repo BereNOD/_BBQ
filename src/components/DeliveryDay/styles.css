@@ -1,0 +1,30 @@
+.DeliveryDay__select {
+    border: 1px solid #D8D8D8;
+    box-sizing: border-box;
+    border-radius: 5px;
+    width: 95px;
+    height: 35px;
+    padding-left: 10px;
+    margin-left: 8px;
+}
+
+.deliveryDay__text {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    color: #D8D8D8;
+}
+
+select {
+	appearance: none;
+	background-image: url('../../assets/svg/dropdown-arrow.svg');
+	background-position: 95% center;
+	background-repeat: no-repeat;
+}
+option {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    color: #D8D8D8;
+}
+

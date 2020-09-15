@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from 'react'
 import './styles.css'
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
     classes?: string | string[]
 }
 
-class Button extends React.Component<Props> {
+class Price extends React.Component<Props> {
     render = () => {
         let classes = 'Text'
 
@@ -19,22 +19,11 @@ class Button extends React.Component<Props> {
             }
         }
         return (
-            <button
-                className={classes}
-                type="button"
-            >
-                {this.props.children}
-            </button>
+            <div {...this.props} className={classes}>
+                {this.props.children} грн.
+            </div>
         )
     }
-
 }
-// <button
-//     className="Button--blue"
-//     type="button"
-// >
-// { children }
-// </button >
 
-
-export default Button
+export default Price

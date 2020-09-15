@@ -1,0 +1,7 @@
+.Delete__button {
+    background: url(../../assets/svg/delete.svg);
+    border: 0;
+    background-color: transparent;
+    width: 15px;
+    height: 15px;
+}
