@@ -6,11 +6,12 @@ import Router from './Router';
 import * as serviceWorker from './serviceWorker';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk'
 
 import reducers from './reducers'
 
-const store = createStore(combineReducers(reducers))
+const store = createStore(combineReducers(reducers), applyMiddleware(thunk))
 
 ReactDOM.render(
   <React.StrictMode>

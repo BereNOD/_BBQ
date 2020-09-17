@@ -1,12 +1,13 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { Dispatch } from 'redux';
+
+import { fetchBisnessMenu } from '../../actions/bisnessMenu'
 
 import './styles.css'
 
-import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container"
+import Col from "react-bootstrap/Col"
+import Row from "react-bootstrap/Row"
 
 import { IStore } from '../../reducers/types'
 
@@ -75,11 +76,8 @@ const mapStateToProps = (state: IStore): StateProps => ({
     bisnessMenu: state.menu.bisness
 })
 
-const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
-  fetchBisnessMenu: (payload: IStore['menu']['bisness']) => dispatch({
-    type: 'FETCH_BISNESS_MENU',
-    payload: payload
-  })
-})
+const mapDispatchToProps = {
+  fetchBisnessMenu
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(BusinessMenu)

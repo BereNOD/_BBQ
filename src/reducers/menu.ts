@@ -1,4 +1,5 @@
 import { IBisnessMenu } from './menuTypes'
+import { FETCH_BISNESS_MENU } from '../actions/bisnessMenu'
 
 interface Action {
   type: string,
@@ -15,7 +16,7 @@ const intialState = {
 
 const menu = (state: IMenuState = intialState, action: Action) => {
   switch (action.type) {
-    case 'FETCH_BISNESS_MENU':
+    case FETCH_BISNESS_MENU:
       return {
         ...state,
         bisness: action.payload
