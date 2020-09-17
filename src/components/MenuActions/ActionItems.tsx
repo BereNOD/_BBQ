@@ -18,7 +18,11 @@ interface Props {
 
 class ActionItems extends React.Component<Props & DispatchProps> {
     handleClick = (): void => {
-        this.props.addToCart({ id: this.props.id })
+        this.props.addToCart({
+            id: this.props.id,
+            title: this.props.period,
+            price: this.props.price
+        })
     }
 
     render = () => (
