@@ -20,6 +20,7 @@ class ActionItems extends React.Component<Props & DispatchProps> {
     handleClick = (): void => {
         this.props.addToCart({ id: this.props.id })
     }
+
     render = () => (
         <div className="Action__box">
             <div className="ActionItem">

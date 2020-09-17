@@ -36,8 +36,6 @@ class BusinessMenu extends React.Component<Props & StateProps & DispatchProps, S
             })
     }
     render = () => {
-      console.log('BusinessMenu bisnessMenu:', this.props.bisnessMenu);
-
         return (
             <Container>
                 <Row>
