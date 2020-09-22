@@ -1,6 +1,9 @@
 import { ICartItem } from './cartTypes'
 import _ from 'lodash'
 
+import { ADD_TO_CART } from '../actions/addToCart'
+import { DELETE_FROM_CART } from './../actions/deleteCartItem'
+
 interface Action {
     type: string,
     payload?: any
@@ -16,7 +19,7 @@ const initialState: ICartState = {
 
 const cart = (state: ICartState = initialState, action: Action) => {
     switch (action.type) {
-        case 'ADD_TO_CART':
+        case ADD_TO_CART:
             if (state.list.find((item) => item.id === action.payload.id)) {
                 return state
             }
@@ -24,7 +27,7 @@ const cart = (state: ICartState = initialState, action: Action) => {
                 ...state,
                 list: [...state.list, action.payload]
             }
-        case 'DELETE_FROM_CART':
+        case DELETE_FROM_CART:
             return {
                 ...state,
                 list: _.filter(state.list, (item: ICartItem) => item.id !== action.payload)

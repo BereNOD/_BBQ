@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { Dispatch } from 'redux';
+
+import { deleteCartItem } from '../../actions/deleteCartItem'
 
 import './styles.css'
 
@@ -24,12 +25,6 @@ class Delete extends React.Component<Props & DispatchProps> {
 }
 
 
-const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
-    deleteCartItem: (id: number) => dispatch({
-        type: 'DELETE_FROM_CART',
-        payload: id
-    })
-
-})
+const mapDispatchToProps = { deleteCartItem }
 
 export default connect(null, mapDispatchToProps)(Delete)
