@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'assets')));
 app.use(express.static(path.join(__dirname, '..', 'build')));
 
-app.use('/bisness-menu', bisnessMenuRouter);
+app.use('/api/bisness-menu', bisnessMenuRouter);
 app.use('*', sync(indexRouter));
 
 module.exports = app;

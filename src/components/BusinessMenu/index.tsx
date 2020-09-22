@@ -30,12 +30,13 @@ type State = {}
 
 class BusinessMenu extends React.Component<Props & StateProps & DispatchProps, State> {
     componentDidMount() {
-        fetch('/bisness-menu')
+        fetch('/api/bisness-menu')
             .then(response => response.json())
             .then(data => {
                 this.props.fetchBisnessMenu(data)
             })
     }
+
     render = () => {
         return (
             <Container>
