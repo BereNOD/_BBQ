@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { Dispatch } from 'redux';
 import { ICartItem } from '../../reducers/cartTypes';
 
-// import Button from '../Buttons/index';
+import { addToCart } from '../../actions/addToCart'
+
 import './styles.css'
 
 type DispatchProps = {
@@ -39,14 +39,6 @@ class ActionItems extends React.Component<Props & DispatchProps> {
 
 }
 
-
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-    addToCart: (item: ICartItem): void => {
-        dispatch({
-            type: 'ADD_TO_CART',
-            payload: item
-        })
-    }
-})
+const mapDispatchToProps = { addToCart }
 
 export default connect(null, mapDispatchToProps)(ActionItems)
