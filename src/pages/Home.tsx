@@ -1,11 +1,11 @@
 import * as React from 'react'
-import Header from '../components/header'
-import BusinessMenu from '../components/BusinessMenu/index'
+// import Header from '../components/header'
+// import BusinessMenu from '../components/BusinessMenu/index'
+import CategoryMenu from '../components/CategoryMenu/index'
 
 const Home = () => (
   <>
-    <Header />
-    <BusinessMenu />
+    <CategoryMenu />
   </>
 )
 
