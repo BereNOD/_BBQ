@@ -9,7 +9,7 @@
   pointer-events: auto;
 }
 
-.Cart__backdrop {
+/* .Cart__backdrop {
   position: fixed;
   display: flex;
   align-items: center;
@@ -20,7 +20,7 @@
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   pointer-events: none;
-}
+} */
 
 .Cart__header {
   display: flex;
