@@ -1,12 +1,6 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-
-export interface IProps {
-  id: number
-  slug: string
-  title: string
-  src: string
-}
+import { IHeaderNavigationItem as IProps } from "../../reducers/navigationTypes"
 
 const NavigationItem = ({ slug, title, src }: IProps) => (
   <Link to={`/menu/${slug}`}>
