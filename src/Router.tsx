@@ -8,12 +8,16 @@ import {
 import About from './pages/About'
 import Users from './pages/Users'
 import Home from './pages/Home'
+import Catalog from './pages/Catalog'
 
 const Router = () => (
   <BrowserRouter>
     <Switch>
       <Route path="/about">
         <About />
+      </Route>
+      <Route path="/catalog">
+        <Catalog />
       </Route>
       <Route path="/users">
         <Users />
