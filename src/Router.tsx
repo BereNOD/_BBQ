@@ -16,7 +16,7 @@ const Router = () => (
       <Route path="/about">
         <About />
       </Route>
-      <Route path="/catalog">
+      <Route path="/catalog/:slug?">
         <Catalog />
       </Route>
       <Route path="/users">
