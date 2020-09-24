@@ -1,0 +1,35 @@
+[
+  {
+    "id": 0,
+    "slug": "set-z-burger",
+    "title": "Сет «Z-Бургер»",
+    "composition": ["бургер", "картофель", "сметанный соус"],
+    "weight": 400,
+    "weightUnit": "грамм",
+    "price": 110,
+    "currency": "грн",
+    "src": "https://placehold.it/290x250"
+  },
+  {
+    "id": 1,
+    "slug": "burger-s-myasom-i-syrom-chedder",
+    "title": "Бургер с мясом и сыром «Чеддер»",
+    "composition": ["бургер", "картофель", "сметанный соус"],
+    "weight": 400,
+    "weightUnit": "грамм",
+    "price": 110,
+    "currency": "грн",
+    "src": "https://placehold.it/290x250"
+  },
+  {
+    "id": 2,
+    "slug": "dabl-burger",
+    "title": "Дабл-бургер",
+    "composition": ["бургер", "картофель", "сметанный соус"],
+    "weight": 400,
+    "weightUnit": "грамм",
+    "price": 110,
+    "currency": "грн",
+    "src": "https://placehold.it/290x250"
+  }
+]
