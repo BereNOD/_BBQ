@@ -14,6 +14,7 @@ interface Props {
     period: string
     price: number
     id: number
+    quantity: number
 }
 
 class ActionItems extends React.Component<Props & DispatchProps> {
@@ -21,7 +22,8 @@ class ActionItems extends React.Component<Props & DispatchProps> {
         this.props.addToCart({
             id: this.props.id,
             title: this.props.period,
-            price: this.props.price
+            price: this.props.price,
+            quantity: this.props.quantity
         })
     }
 

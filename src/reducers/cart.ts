@@ -3,6 +3,7 @@ import _ from 'lodash'
 
 import { ADD_TO_CART } from '../actions/addToCart'
 import { DELETE_FROM_CART } from './../actions/deleteCartItem'
+import { INCREASE } from './../actions/increase'
 
 interface Action {
     type: string,
@@ -11,6 +12,7 @@ interface Action {
 
 export interface ICartState {
     list: ICartItem[]
+
 }
 
 const initialState: ICartState = {
@@ -34,6 +36,11 @@ const cart = (state: ICartState = initialState, action: Action) => {
             }
         default:
             return state
+        case INCREASE:
+            return {
+                ...state,
+                list: _.filter(state.list, (item: ICartItem) => item.quantity += 1)
+            }
     }
 }
 

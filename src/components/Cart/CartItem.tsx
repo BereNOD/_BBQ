@@ -11,7 +11,7 @@ import Delete from '../Delete'
 
 import CartItemPhoto from '../../assets/images/cart-item-photo.jpg'
 
-const CartItem = ({ id, title, price }: ICartItem): JSX.Element => (
+const CartItem = ({ id, title, price, quantity }: ICartItem): JSX.Element => (
   <div className="Cart__item">
     <Image
       src={CartItemPhoto}
@@ -23,7 +23,10 @@ const CartItem = ({ id, title, price }: ICartItem): JSX.Element => (
       <Text classes="Cart__itemInfo--description">{title}</Text>
       <Price classes="Cart__itemPrice">{price}</Price>
     </div>
-    <Quantity />
+    <Quantity
+      id={id}
+      quantity={quantity}
+    />
     <Delete
       id={id}
     />

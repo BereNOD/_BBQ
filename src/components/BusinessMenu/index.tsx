@@ -19,10 +19,10 @@ import Action from '../MenuActions'
 import businessMenuPreview from '../../assets/images/bisness-menu-preview.png'
 
 type StateProps = {
-  bisnessMenu: any
+    bisnessMenu: any
 }
 type DispatchProps = {
-  fetchBisnessMenu: (payload: IStore['menu']['bisness']) => void
+    fetchBisnessMenu: (payload: IStore['menu']['bisness']) => void
 }
 type Props = {}
 type State = {}
@@ -78,7 +78,7 @@ const mapStateToProps = (state: IStore): StateProps => ({
 })
 
 const mapDispatchToProps = {
-  fetchBisnessMenu
+    fetchBisnessMenu
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(BusinessMenu)
