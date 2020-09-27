@@ -1,9 +1,7 @@
 import { ICartItem } from './cartTypes'
 import _ from 'lodash'
 
-import { ADD_TO_CART } from '../actions/addToCart'
-import { DELETE_FROM_CART } from './../actions/deleteCartItem'
-import { INCREASE } from './../actions/increase'
+import { ADD_TO_CART, DELETE_FROM_CART, INCREASE } from '../actions/cart'
 
 interface Action {
     type: string,

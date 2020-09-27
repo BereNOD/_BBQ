@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-import { increase } from '../../actions/increase'
+import { increase } from '../../actions/cart'
 
 import { IStore } from '../../reducers/types'
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { ICartItem } from '../../reducers/cartTypes';
 
-import { addToCart } from '../../actions/addToCart'
+import { addToCart } from '../../actions/cart'
 
 import './styles.css'
 
