@@ -1,7 +1,7 @@
 import { ICartItem } from './cartTypes'
 import _ from 'lodash'
 
-import { ADD_TO_CART, DELETE_FROM_CART, INCREASE } from '../actions/cart'
+import { ADD_TO_CART, DELETE_FROM_CART, CHANGE_CART_ITEM_QUANTITY } from '../actions/cart'
 
 interface Action {
     type: string,
@@ -32,13 +32,22 @@ const cart = (state: ICartState = initialState, action: Action) => {
                 ...state,
                 list: _.filter(state.list, (item: ICartItem) => item.id !== action.payload)
             }
+        case CHANGE_CART_ITEM_QUANTITY:
+            const index = _.findIndex(state.list, (item) => item.id === action.payload.id)
+            if (index !== -1) {
+                const item = {
+                    ...state.list[index],
+                    quantity: action.payload.quantity
+                }
+                state.list[index] = item
+                return {
+                    ...state,
+                    list: [...state.list]
+                }
+            }
+            return state
         default:
             return state
-        case INCREASE:
-            return {
-                ...state,
-                list: _.filter(state.list, (item: ICartItem) => item.quantity += 1)
-            }
     }
 }
 

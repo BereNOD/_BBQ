@@ -37,7 +37,7 @@ type State = {}
 
 class Cart extends React.Component<Props & StateProps, State> {
   render = () => {
-    // console.log('Cart props', this.props);
+    console.log('Cart props', this.props);
 
     return (
       <div className="Cart__backdrop">
