@@ -22,6 +22,7 @@ class Button extends React.Component<Props> {
             <button
                 className={classes}
                 type="button"
+                {...this.props}
             >
                 {this.props.children}
             </button>
