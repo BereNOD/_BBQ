@@ -2,6 +2,7 @@ import { Dispatch } from "redux";
 import { IHeaderNavigationItem } from "../reducers/navigationTypes";
 
 export const SET_HEADER_NAVIGATION = 'SET_HEADER_NAVIGATION'
+export const TOGGLE_LOADER = 'TOGGLE_LOADER'
 
 export const fetchHeaderNavigation = () => {
   return (dispatch: Dispatch) => {
@@ -13,3 +14,13 @@ export const fetchHeaderNavigation = () => {
       }))
   }
 }
+
+export const toggleLoader = (isFetching: boolean) => {
+  return (dispatch: Dispatch) => {
+    return dispatch({
+      type: TOGGLE_LOADER,
+      isFetching: isFetching
+    })
+  }
+}
+
