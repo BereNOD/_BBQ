@@ -7,7 +7,6 @@ import { fetchHeaderNavigation, toggleLoader } from '../../actions/navigation'
 import { IStore } from '../../reducers/types'
 import './styles.css'
 
-import loaderImage from '../../assets/svg/loaders/audio.svg'
 import Loader from '../Loader'
 
 interface IStateProps {
