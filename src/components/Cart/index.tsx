@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { IStore } from '../../reducers/types'
+import axios from 'axios'
 
 import { ICartItem } from '../../../src/reducers/cartTypes'
 
@@ -36,6 +37,14 @@ type Props = {}
 type State = {}
 
 class Cart extends React.Component<Props & StateProps, State> {
+  handleMakeOrder = async () => {
+    console.log('test');
+
+    await axios('/api/cart', {
+      method: 'POST',
+      data: this.props.cart
+    })
+  }
   render = () => {
     console.log('Cart props', this.props);
 
@@ -110,7 +119,8 @@ class Cart extends React.Component<Props & StateProps, State> {
             </div>
           </div>
           <div className="OrderButton__wrapper">
-            <Button classes="Button--blue OrderButton__text">Оформить заказ</Button>
+            {/* @ts-ignore */}
+            <Button classes="Button--blue OrderButton__text" onClick={this.handleMakeOrder}>Оформить заказ</Button>
           </div>
 
         </div>
