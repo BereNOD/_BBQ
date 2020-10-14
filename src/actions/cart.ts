@@ -37,3 +37,16 @@ export const changeCartItemQuantity = (id: number, quantity: number | string) =>
         })
     }
 }
+
+export const CHANGE_CART_USERNAME = 'CHANGE_CART_USERNAME'
+
+export const changeCartUsername = (username: string) => {
+    return (dispatch: Dispatch) => {
+        return dispatch({
+            type: CHANGE_CART_USERNAME,
+            payload: {
+                username
+            }
+        })
+    }
+}

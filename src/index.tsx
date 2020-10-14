@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import './index.css';
+import 'nprogress/nprogress.css'
 import Router from './Router';
 import * as serviceWorker from './serviceWorker';
 import axios from 'axios'

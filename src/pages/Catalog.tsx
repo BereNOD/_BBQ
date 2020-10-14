@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { ICatalogItem } from '../reducers/catalogTypes'
 import { IStore } from '../reducers/types'
 
+import Loader from '../components/Loader'
 
 import Header from '../components/header'
 import Navigation from '../components/Navigation'
@@ -27,22 +28,25 @@ interface IProps {
 }
 
 class Catalog extends React.Component<IProps & IStateProps & IDispatchProps> {
-    componentDidMount = () => {
-        this.props.fetchCatalog(this.props.match.params.slug)
+    fetchCatalog = async () => await this.props.fetchCatalog(this.props.match.params.slug)
 
-    }
+    render = () => {
+        return (
+            <Loader
+                load={this.fetchCatalog}
+                watchProps={this.props.match.params.slug}
+            >
+                {this.props.catalog.length === 0 ? 'Loading' : (
+                    <>
+                        <Header />
+                        <Navigation />
+                    </>
+                )}
 
-    componentDidUpdate = (prevProps: IProps & IStateProps & IDispatchProps) => {
-        if (prevProps.match.params.slug !== this.props.match.params.slug) {
-            this.props.fetchCatalog(this.props.match.params.slug)
-        }
+
+            </Loader>
+        )
     }
-    render = () => (
-        <>
-            <Header />
-            <Navigation />
-        </>
-    )
 }
 
 const mapStateToProps = (state: IStore): IStateProps => ({
