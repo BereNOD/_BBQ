@@ -1,7 +1,9 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { IStore } from '../../reducers/types'
-import axios from 'axios'
+import { createOrder } from '../../actions/cart'
+
+import { ToastsStore } from 'react-toasts';
 
 import { ICartItem } from '../../../src/reducers/cartTypes'
 
@@ -28,25 +30,28 @@ import DeliveryTime from '../DeliveryTime'
 
 
 type StateProps = {
-  cart: any
+  cart: any,
+  cartError: any
 }
-//   type DispatchProps = {
-//     fetchBisnessMenu: (payload: IStore['cart']['list']) => void
-//   }
+
+type DispatchProps = {
+  createOrder: () => void
+}
+
 type Props = {}
 type State = {}
 
-class Cart extends React.Component<Props & StateProps, State> {
+class Cart extends React.Component<Props & StateProps & DispatchProps, State> {
+  componentDidUpdate = (prevProps: Props & StateProps & DispatchProps) => {
+    if (!prevProps.cartError && this.props.cartError) {
+      ToastsStore.error(this.props.cartError.message);
+    }
+  }
   handleMakeOrder = async () => {
-    console.log('test');
-
-    await axios('/api/cart', {
-      method: 'POST',
-      data: this.props.cart
-    })
+    this.props.createOrder()
   }
   render = () => {
-    console.log('Cart props', this.props);
+    console.log(this.props.cartError);
 
     return (
       <div className="Cart__backdrop">
@@ -129,7 +134,12 @@ class Cart extends React.Component<Props & StateProps, State> {
   }
 }
 const mapStateToProps = (state: IStore): StateProps => ({
-  cart: state.cart.list
+  cart: state.cart.list,
+  cartError: state.cart.error
 })
 
-export default connect(mapStateToProps)(Cart)
+const mapDispatchToProps = {
+  createOrder
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cart)

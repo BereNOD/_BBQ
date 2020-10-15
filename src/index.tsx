@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import './index.css';
 import 'nprogress/nprogress.css'
 import Router from './Router';
+import { ToastsContainer, ToastsContainerPosition, ToastsStore } from 'react-toasts';
 import * as serviceWorker from './serviceWorker';
 import axios from 'axios'
 
@@ -23,6 +24,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router />
+      <ToastsContainer store={ToastsStore} position={ToastsContainerPosition.TOP_LEFT} />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

@@ -1,6 +1,8 @@
+import { IStore } from './../reducers/types';
 import { Dispatch } from "redux";
 import { ICartItem } from "../reducers/cartTypes";
 import number from "../sanitizers/number";
+import axios from 'axios';
 
 export const ADD_TO_CART = 'ADD_TO_CART'
 
@@ -48,5 +50,29 @@ export const changeCartUsername = (username: string) => {
                 username
             }
         })
+    }
+}
+
+export const REFRESH_ORDER = 'REFRESH_ORDER'
+export const FAILURE_ORDER = 'FAILURE_ORDER'
+export const CREATE_ORDER = 'CREATE_ORDER'
+
+export const createOrder = () => {
+    return async (dispatch: Dispatch, getState: () => IStore) => {
+        const { cart } = getState()
+        try {
+            await axios('/api/cart', {
+                method: 'POST',
+                data: cart
+            })
+            dispatch({
+                type: REFRESH_ORDER
+            })
+        } catch (error) {
+            dispatch({
+                type: FAILURE_ORDER,
+                payload: error
+            })
+        }
     }
 }
