@@ -5,7 +5,7 @@ import { IStore } from '../../reducers/types'
 import { changeCartUsername } from '../../actions/cart'
 
 interface IStateProps {
-    name: string
+    name: any
 }
 
 interface IDispatchProps {
