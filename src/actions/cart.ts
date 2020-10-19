@@ -66,6 +66,19 @@ export const changeCartUserPhone = (userPhone: any) => {
     }
 }
 
+export const CHANGE_PAYAMENT_TYPE = 'CHANGE_PAYAMENT_TYPE'
+
+export const changePaymentType = (paymentType: any) => {
+    return (dispatch: Dispatch) => {
+        return dispatch({
+            type: CHANGE_PAYAMENT_TYPE,
+            payload: {
+                paymentType
+            }
+        })
+    }
+}
+
 
 export const REFRESH_ORDER = 'REFRESH_ORDER'
 export const FAILURE_ORDER = 'FAILURE_ORDER'
