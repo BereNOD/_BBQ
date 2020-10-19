@@ -53,6 +53,33 @@ export const changeCartUsername = (username: string) => {
     }
 }
 
+export const CHANGE_CART_PHONE = 'CHANGE_CART_PHONE'
+
+export const changeCartUserPhone = (userPhone: any) => {
+    return (dispatch: Dispatch) => {
+        return dispatch({
+            type: CHANGE_CART_PHONE,
+            payload: {
+                userPhone
+            }
+        })
+    }
+}
+
+export const CHANGE_PAYAMENT_TYPE = 'CHANGE_PAYAMENT_TYPE'
+
+export const changePaymentType = (paymentType: any) => {
+    return (dispatch: Dispatch) => {
+        return dispatch({
+            type: CHANGE_PAYAMENT_TYPE,
+            payload: {
+                paymentType
+            }
+        })
+    }
+}
+
+
 export const REFRESH_ORDER = 'REFRESH_ORDER'
 export const FAILURE_ORDER = 'FAILURE_ORDER'
 export const CREATE_ORDER = 'CREATE_ORDER'
