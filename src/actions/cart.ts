@@ -81,6 +81,7 @@ export const changePaymentType = (paymentType: any) => {
 
 
 export const REFRESH_ORDER = 'REFRESH_ORDER'
+export const SUCCESSFUL_ORDER = 'SUCCESSFUL_ORDER'
 export const FAILURE_ORDER = 'FAILURE_ORDER'
 export const CREATE_ORDER = 'CREATE_ORDER'
 
@@ -88,18 +89,24 @@ export const createOrder = () => {
     return async (dispatch: Dispatch, getState: () => IStore) => {
         const { cart } = getState()
         try {
-            await axios('/api/cart', {
+            const result = await axios('/api/cart', {
                 method: 'POST',
                 data: cart
             })
+
+            dispatch({
+              type: SUCCESSFUL_ORDER,
+              payload: result
+            })
+
             dispatch({
                 type: REFRESH_ORDER
             })
         } catch (error) {
-            dispatch({
-                type: FAILURE_ORDER,
-                payload: error
-            })
+          dispatch({
+            type: FAILURE_ORDER,
+            payload: error
+          })
         }
     }
 }

@@ -43,8 +43,17 @@ type State = {}
 
 class Cart extends React.Component<Props & StateProps & DispatchProps, State> {
   componentDidUpdate = (prevProps: Props & StateProps & DispatchProps) => {
-    if (!prevProps.cartError && this.props.cartError) {
-      ToastsStore.error(this.props.cartError.message);
+    if (
+      (!prevProps.cartError && this.props.cartError) ||
+      (prevProps.cartError && this.props.cartError && prevProps.cartError !== this.props.cartError)
+    ) {
+      if (this.props.cartError?.response?.data) {
+        this.props.cartError.response.data.forEach(({ msg }: { msg: string }) => {
+          ToastsStore.error(msg)
+        })
+      } else {
+        ToastsStore.error(this.props.cartError.message)
+      }
     }
   }
   handleMakeOrder = async () => {
