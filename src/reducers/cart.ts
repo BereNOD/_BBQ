@@ -1,7 +1,7 @@
 import { ICartItem } from './cartTypes'
 import _ from 'lodash'
 
-import { ADD_TO_CART, DELETE_FROM_CART, CHANGE_CART_ITEM_QUANTITY, CHANGE_CART_USERNAME, CHANGE_CART_PHONE, REFRESH_ORDER, FAILURE_ORDER, CHANGE_PAYAMENT_TYPE } from '../actions/cart'
+import { ADD_TO_CART, DELETE_FROM_CART, CHANGE_CART_ITEM_QUANTITY, CHANGE_CART_USERNAME, CHANGE_CART_PHONE, REFRESH_ORDER, FAILURE_ORDER, CHANGE_PAYAMENT_TYPE, CHANGE_DELIVERY_TYPE } from '../actions/cart'
 
 
 interface Action {
@@ -14,6 +14,7 @@ export interface ICartState {
     name: string,
     phone: string,
     paymentType: string,
+    deliveryType: string,
     error: null | Error
 
 }
@@ -23,6 +24,7 @@ const initialState: ICartState = {
     name: '',
     phone: '',
     paymentType: '',
+    deliveryType: '',
     error: null
 }
 
@@ -69,6 +71,11 @@ const cart = (state: ICartState = initialState, action: Action) => {
             return {
                 ...state,
                 paymentType: action.payload.paymentType
+            }
+        case CHANGE_DELIVERY_TYPE:
+            return {
+                ...state,
+                deliveryType: action.payload.deliveryType
             }
         case REFRESH_ORDER:
             return initialState

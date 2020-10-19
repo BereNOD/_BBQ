@@ -68,12 +68,25 @@ export const changeCartUserPhone = (userPhone: any) => {
 
 export const CHANGE_PAYAMENT_TYPE = 'CHANGE_PAYAMENT_TYPE'
 
-export const changePaymentType = (paymentType: any) => {
+export const changePaymentType = (paymentType: string) => {
     return (dispatch: Dispatch) => {
         return dispatch({
             type: CHANGE_PAYAMENT_TYPE,
             payload: {
                 paymentType
+            }
+        })
+    }
+}
+
+export const CHANGE_DELIVERY_TYPE = 'CHANGE_DELIVERY_TYPE'
+
+export const changeDeliveryType = (deliveryType: string) => {
+    return (dispatch: Dispatch) => {
+        return dispatch({
+            type: CHANGE_DELIVERY_TYPE,
+            payload: {
+                deliveryType
             }
         })
     }
