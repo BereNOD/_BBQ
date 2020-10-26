@@ -7,6 +7,7 @@ import Router from './Router';
 import { ToastsContainer, ToastsContainerPosition, ToastsStore } from 'react-toasts';
 import * as serviceWorker from './serviceWorker';
 import axios from 'axios'
+import './socket'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';

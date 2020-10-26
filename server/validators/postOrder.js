@@ -17,4 +17,4 @@ const postOrder = [
   }
 ]
 
-export default postOrder
+module.exports = postOrder

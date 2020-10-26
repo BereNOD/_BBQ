@@ -16,7 +16,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '..', 'assets')));
 app.use(express.static(path.join(__dirname, '..', 'build')));
 
-
 app.use('/api', APIRouter);
 
 app.use('*', sync(indexRouter));
